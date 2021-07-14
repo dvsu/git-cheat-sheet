@@ -19,7 +19,9 @@ The most common Git commands
 13. `git checkout`
 14. more to add
 
-### `git config`
+### 1. `git config`
+
+---
 
 1. Show global configuration
 
@@ -85,7 +87,9 @@ The most common Git commands
    git config --global user.name "adam.smith@example.com"
    ```
 
-### `git init`
+### 2. `git init`
+
+---
 
 Initialize empty Git repository
 

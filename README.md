@@ -135,7 +135,7 @@ git submodule add git@github.com:{myaccount}/{myrepo}.git {path_name}
 
 **_Example_**
 
-Let say we want to add a submodule and name the path, `dashboard`, from our Github account, `mysuperaccount`, to current repository, `car`.
+Let say we want to add a submodule and name the path, `dashboard`, from our Github account, `mysuperaccount`, to current repository, `car`. If it is successful, Git will create a new file, `.gitmodule`, in current repository. If `.gitmodule` has already existed, Git will instead append the details of submodule.
 
 ```none
 git submodule add git@github.com:mysuperaccount/dashboard.git dashboard
@@ -145,12 +145,21 @@ git submodule add git@github.com:mysuperaccount/dashboard.git dashboard
 car
 ├── ...
 ├── .gitignore
+├── .gitmodule
 ├── ...
 ├── dashboard
 │   ├── ...
 │   ├── ...
 │   └── ...
 └── ...
+```
+
+Example of content inside `.gitmodule`
+
+```none
+[submodule "dashboard"]
+	path = dashboard
+	url = git@github.com:mysuperaccount/dashboard.git
 ```
 
 In some cases, the path name may have already existed in `car` repository. Git will complain

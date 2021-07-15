@@ -17,7 +17,7 @@ The most common Git commands
 11. `git clone`
 12. `git branch`
 13. `git checkout`
-14. more to add
+14. `git submodule`
 
 ### 1. `git config`
 
@@ -119,4 +119,56 @@ Let say we want to create a new repository with name `web_project`.
 
 ```none
 Initialized empty Git repository in /home/ubuntu/web_project/.git/
+```
+
+### 14. `git submodule`
+
+---
+
+Add a submodule to current repository
+
+**_Command_**
+
+```none
+git submodule add git@github.com:{myaccount}/{myrepo}.git {path_name}
+```
+
+**_Example_**
+
+Let say we want to add a submodule and name the path, `dashboard`, from our Github account, `mysuperaccount`, to current repository, `car`.
+
+```none
+git submodule add git@github.com:mysuperaccount/dashboard.git dashboard
+```
+
+```none
+car
+├── ...
+├── .gitignore
+├── ...
+├── dashboard
+│   ├── ...
+│   ├── ...
+│   └── ...
+└── ...
+```
+
+In some cases, the path name may have already existed in `car` repository. Git will complain
+
+```none
+'dashboard' already exists in the index
+```
+
+If the path exists because we cloned the `dashboard` repository before, the workaround is to add `--force` flag to the Git command
+
+**_Command_**
+
+```none
+git submodule add --force git@github.com:{myaccount}/{myrepo}.git {path_name}
+```
+
+**_Example_**
+
+```none
+git submodule add --force git@github.com:mysuperaccount/dashboard.git dashboard
 ```

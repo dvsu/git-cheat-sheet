@@ -121,6 +121,73 @@ The most common Git commands
    Initialized empty Git repository in /home/ubuntu/web_project/.git/
    ```
 
+### 4. `git commit`
+
+---
+
+1. Move content from staging area to local repository
+
+   **_Command_**
+
+   ```none
+   git commit
+   ```
+
+   This command will open a file where you can type your commit message.
+
+   **_Example_**
+
+   ```none
+   Fix UI bug found on feature 2S
+   ```
+
+   Save and close the file to complete the commit.
+
+   To do the same process in line
+
+   **_Command_**
+
+   ```none
+   git commit -m {COMMIT_MESSAGE}
+   ```
+
+   **_Example_**
+
+   ```none
+   git commit -m "Fix UI bug found on feature 2S"
+   ```
+
+   **_Example output_**
+
+   ```none
+   [mybranch 1a2b3c4] Fix UI bug found on feature 2S
+   1 file changed, 50 insertions(+), 18 deletions(-)
+   ```
+
+2. Revise commit message of latest commit
+
+   **_Command_**
+
+   ```none
+   git commit --amend
+   ```
+
+   This command will also open a file where you can edit the latest commit message.
+
+   Similarly, you can do it in line.
+
+   **_Command_**
+
+   ```none
+   git commit --amend -m {NEW_COMMIT_MESSAGE}
+   ```
+
+   **_Example_**
+
+   ```none
+   git commit --amend -m "Fix UI bug found on feature 2T"
+   ```
+
 ### 7. `git remote`
 
 ---

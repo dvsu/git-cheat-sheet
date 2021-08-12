@@ -101,7 +101,7 @@ The most common Git commands
 
    **_Example_**
 
-   Let say we want to create a new repository with name `web_project`.
+   Let say you want to create a new repository with name `web_project`.
 
    1. Create a folder `web_project`
    2. Change directory to `web_project`
@@ -237,7 +237,7 @@ The most common Git commands
    git remote add origin git@github.com:mysuperaccount/shinyrepo.git
    ```
 
-   This command will add a new connection to remote repo `shinyrepo` and create a local alias `origin`. The alias is essentially a shortcut for the full URL. Instead of typing the whole URL for every interaction with remote repo, we can simply type the alias name, in this case `origin` to replace the URL.
+   This command will add a new connection to remote repo `shinyrepo` and create a local alias `origin`. The alias is essentially a shortcut for the full URL. Instead of typing the whole URL for every interaction with remote repo, you can simply type the alias name, in this case `origin` to replace the URL.
 
 3. Check remote URL of specific alias
 
@@ -301,6 +301,78 @@ The most common Git commands
 
    This command will change the URL of alias `origin` from `git@github.com:mysuperaccount/shinyrepo.git` to `git@github.com:mysuperaccount/shinierrepo.git`. Again, to confirm whether the command is successfully executed, use command `git remote -v`
 
+### 9. `git pull`
+
+---
+
+A shortcut command to `fetch` and `merge` to the local checked-out branch.
+
+**_Command_**
+
+```none
+git pull {ALIAS} {REMOTE_BRANCH}
+```
+
+**_Example_**
+
+If you want to sync and merge your remote repo with alias `origin` and branch name `main`, to current checked-out branch, the command is
+
+```none
+git pull origin main
+```
+
+There is also a case when you created and did the first commit on a new remote repo. Later on, you also initialized a new Git repo locally and wanted to sync both repos.
+
+When you try to `git pull`, e.g.
+
+```none
+git pull origin main
+```
+
+this error message may pop up
+
+```none
+fatal: refusing to merge unrelated histories
+```
+
+It is because both repos have two completely different histories, e.g. different commit hashes
+
+```none
+remote repo
+   commit (a1b2c3d)
+     x-----------------------
+
+local repo
+   commit (e5f6g8h)
+     x-----------------------
+```
+
+The simple solution is to merge them locally using `--allow-unrelated-histories` option.
+
+**_Command_**
+
+```none
+git pull {ALIAS} {REMOTE_BRANCH} --allow-unrelated-histories
+```
+
+**_Example_**
+
+```none
+git pull origin main --allow-unrelated-histories
+```
+
+```none
+remote repo
+   commit a1b2c3d
+     x----------------------.
+                             \
+local repo                    \
+   commit e5f6f8c              \
+     x--------------------------x--------------- (your next commit may
+                           commit ad982cf           start from here)
+                         merge e5f6f8c a1b2c3d
+```
+
 ### 14. `git submodule`
 
 ---
@@ -315,7 +387,7 @@ git submodule add git@github.com:{myaccount}/{myrepo}.git {path_name}
 
 **_Example_**
 
-Let say we want to add a submodule and name the path, `dashboard`, from our Github account, `mysuperaccount`, to current repository, `car`. If it is successful, Git will create a new file, `.gitmodule`, in current repository. If `.gitmodule` has already existed, Git will instead append the details of submodule.
+Let say you want to add a submodule and name the path, `dashboard`, from our Github account, `mysuperaccount`, to current repository, `car`. If it is successful, Git will create a new file, `.gitmodule`, in current repository. If `.gitmodule` has already existed, Git will instead append the details of submodule.
 
 ```none
 git submodule add git@github.com:mysuperaccount/dashboard.git dashboard
@@ -348,7 +420,7 @@ In some cases, the path name may have already existed in `car` repository. Git w
 'dashboard' already exists in the index
 ```
 
-If the path exists because we cloned the `dashboard` repository before, the workaround is to add `--force` flag to the Git command
+If the path exists because you cloned the `dashboard` repository before, the workaround is to add `--force` flag to the Git command
 
 **_Command_**
 

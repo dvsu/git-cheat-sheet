@@ -301,6 +301,76 @@ The most common Git commands
 
    This command will change the URL of alias `origin` from `git@github.com:mysuperaccount/shinyrepo.git` to `git@github.com:mysuperaccount/shinierrepo.git`. Again, to confirm whether the command is successfully executed, use command `git remote -v`
 
+### 8. `git push`
+
+---
+
+1. Upload/ push local commits to a remote repository with the same branch name.
+
+   **_Command_**
+
+   ```none
+   git push {ALIAS} {BRANCH_NAME}
+   ```
+
+   To upload local commits to a remote repository with alias `origin` branch `main`
+
+   **_Example_**
+
+   ```none
+   git push origin main
+   ```
+
+2. Rename remote branch
+
+   **_Command_**
+
+   ```none
+   git push {ALIAS} {LOCAL_BRANCH}:{REMOTE_BRANCH}
+   ```
+
+   **_Example_**
+
+   Upload commits from local branch `ft1` to a remote repository and rename remote branch name to `feature1`
+
+   ```none
+   git push origin ft1:feature1
+   ```
+
+3. Delete remote branch
+
+   **_Command_**
+
+   ```none
+   git push {ALIAS} :{REMOTE_BRANCH}
+   ```
+
+   **_Example_**
+
+   Delete remote branch `feature1` from remote repository with alias `origin`.
+
+   ```none
+   git push origin :feature1
+   ```
+
+   It basically tells `git` to upload/ push nothing into remote branch `feature1`, which essentially deletes the remote branch.
+
+4. Delete remote branch (alternative)
+
+   **_Command_**
+
+   ```none
+   git push {ALIAS} --delete {REMOTE_BRANCH}
+   ```
+
+   ***Example***
+
+   Delete remote branch `feature1` from remote repository with alias `origin`.
+
+   ```none
+   git push origin --delete feature1 
+   ```
+
 ### 9. `git pull`
 
 ---

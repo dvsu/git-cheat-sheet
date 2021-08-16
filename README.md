@@ -64,7 +64,7 @@ The most common Git commands
    **_Command_**
 
    ```none
-   git config --global user.name {NAME}
+   git config --global user.name <NAME>
    ```
 
    **_Example_**
@@ -78,7 +78,7 @@ The most common Git commands
    **_Command_**
 
    ```none
-   git config --global user.email {EMAIL}
+   git config --global user.email <EMAIL>
    ```
 
    **_Example_**
@@ -148,7 +148,7 @@ The most common Git commands
    **_Command_**
 
    ```none
-   git commit -m {COMMIT_MESSAGE}
+   git commit -m <COMMIT_MESSAGE>
    ```
 
    **_Example_**
@@ -179,7 +179,7 @@ The most common Git commands
    **_Command_**
 
    ```none
-   git commit --amend -m {NEW_COMMIT_MESSAGE}
+   git commit --amend -m <NEW_COMMIT_MESSAGE>
    ```
 
    **_Example_**
@@ -228,7 +228,7 @@ The most common Git commands
    **_Command_**
 
    ```none
-   git remote add {ALIAS} {URL}
+   git remote add <ALIAS> <URL>
    ```
 
    **_Example_**
@@ -244,7 +244,7 @@ The most common Git commands
    **_Command_**
 
    ```none
-   git remote get-url {ALIAS}
+   git remote get-url <ALIAS>
    ```
 
    **_Example_**
@@ -266,7 +266,7 @@ The most common Git commands
    **_Command_**
 
    ```none
-   git remote rename {OLD_ALIAS} {NEW_ALIAS}
+   git remote rename <OLD_ALIAS> <NEW_ALIAS>
    ```
 
    **_Example_**
@@ -290,7 +290,7 @@ The most common Git commands
    **_Command_**
 
    ```none
-   git remote set-url {ALIAS} {NEW_URL}
+   git remote set-url <ALIAS> <NEW_URL>
    ```
 
    **_Example_**
@@ -310,7 +310,7 @@ The most common Git commands
    **_Command_**
 
    ```none
-   git push {ALIAS} {BRANCH_NAME}
+   git push <ALIAS> <BRANCH_NAME>
    ```
 
    To upload local commits to a remote repository with alias `origin` branch `main`
@@ -326,7 +326,7 @@ The most common Git commands
    **_Command_**
 
    ```none
-   git push {ALIAS} {LOCAL_BRANCH}:{REMOTE_BRANCH}
+   git push <ALIAS> <LOCAL_BRANCH>:<REMOTE_BRANCH>
    ```
 
    **_Example_**
@@ -342,7 +342,7 @@ The most common Git commands
    **_Command_**
 
    ```none
-   git push {ALIAS} :{REMOTE_BRANCH}
+   git push <ALIAS> :<REMOTE_BRANCH>
    ```
 
    **_Example_**
@@ -360,7 +360,7 @@ The most common Git commands
    **_Command_**
 
    ```none
-   git push {ALIAS} --delete {REMOTE_BRANCH}
+   git push <ALIAS></ALIAS> --delete <REMOTE_BRANCH>
    ```
 
    ***Example***
@@ -380,7 +380,7 @@ A shortcut command to `fetch` and `merge` to the local checked-out branch.
 **_Command_**
 
 ```none
-git pull {ALIAS} {REMOTE_BRANCH}
+git pull <ALIAS> <REMOTE_BRANCH>
 ```
 
 **_Example_**
@@ -422,7 +422,7 @@ The simple solution is to merge them locally using `--allow-unrelated-histories`
 **_Command_**
 
 ```none
-git pull {ALIAS} {REMOTE_BRANCH} --allow-unrelated-histories
+git pull <ALIAS> <REMOTE_BRANCH> --allow-unrelated-histories
 ```
 
 **_Example_**
@@ -468,7 +468,7 @@ local repo                    \
    **_Command_**
 
    ```none
-   git branch -m {BRANCH_NAME} {NEW_NAME}
+   git branch -m <BRANCH_NAME> <NEW_NAME>
    ```
 
    **_Example_**
@@ -484,7 +484,7 @@ local repo                    \
    **_Command_**
 
    ```none
-   git branch -d {BRANCH_NAME}
+   git branch -d <BRANCH_NAME>
    ```
 
    **_Example_**
@@ -504,7 +504,7 @@ Add a submodule to current repository
 **_Command_**
 
 ```none
-git submodule add git@github.com:{myaccount}/{myrepo}.git {path_name}
+git submodule add git@github.com:<myaccount>/<myrepo>.git <path_name>
 ```
 
 **_Example_**
@@ -547,7 +547,7 @@ If the path exists because you cloned the `dashboard` repository before, the wor
 **_Command_**
 
 ```none
-git submodule add --force git@github.com:{myaccount}/{myrepo}.git {path_name}
+git submodule add --force git@github.com:<myaccount>/<myrepo>.git <path_name>
 ```
 
 **_Example_**

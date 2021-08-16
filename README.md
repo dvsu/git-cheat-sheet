@@ -31,7 +31,7 @@ The most common Git commands
    git config --list
    ```
 
-   **_Example output_**
+   **_Output_**
 
    ```none
    user.name=Adam Smith
@@ -48,7 +48,7 @@ The most common Git commands
    git config --list --show-origin
    ```
 
-   **_Example output_**
+   **_Output_**
 
    ```none
    file:/home/ubuntu/.gitconfig    user.name=Adam Smith
@@ -115,7 +115,7 @@ The most common Git commands
    ~/web_project$ git init
    ```
 
-   **_Example output_**
+   **_Output_**
 
    ```none
    Initialized empty Git repository in /home/ubuntu/web_project/.git/
@@ -157,7 +157,7 @@ The most common Git commands
    git commit -m "Fix UI bug found on feature 2S"
    ```
 
-   **_Example output_**
+   **_Output_**
 
    ```none
    [mybranch 1a2b3c4] Fix UI bug found on feature 2S
@@ -202,7 +202,7 @@ The most common Git commands
    git remote
    ```
 
-   **_Example output_**
+   **_Output_**
 
    ```none
    origin
@@ -216,7 +216,7 @@ The most common Git commands
    git remote -v
    ```
 
-   **_Example output_**
+   **_Output_**
 
    ```none
    origin  git@github.com:mysuperaccount/shinyrepo.git (fetch)
@@ -253,7 +253,7 @@ The most common Git commands
    git remote get-url origin
    ```
 
-   **_Example output_**
+   **_Output_**
 
    ```none
    git@github.com:mysuperaccount/shinyrepo.git
@@ -278,7 +278,7 @@ The most common Git commands
    This command will rename the existing alias `origin` to `somethingcool`. To confirm the command is successfully executed,
    use command `git remote -v`
 
-   **_Example output_**
+   **_Output_**
 
    ```none
    somethingcool  git@github.com:mysuperaccount/shinyrepo.git (fetch)
@@ -372,6 +372,58 @@ local repo                    \
                            commit ad982cf           start from here)
                          merge e5f6f8c a1b2c3d
 ```
+
+### 12. `git branch`
+
+---
+
+1. Check existing local branches
+
+   **_Command_**
+
+   ```none
+   git branch
+   ```
+
+   **_Output_**
+
+   ```none
+   * master
+     branch1
+     branchn
+   ```
+
+2. Rename branch
+
+   **_Command_**
+
+   ```none
+   git branch -m {BRANCH_NAME} {NEW_NAME}
+   ```
+
+   **_Example_**
+
+   Change branch name `master` to `main`
+
+   ```none
+   git branch -m master main
+   ```
+
+3. Delete local branch
+
+   **_Command_**
+
+   ```none
+   git branch -d {BRANCH_NAME}
+   ```
+
+   **_Example_**
+
+   Delete `branch1` from local branches
+
+   ```none
+   git branch -d branch1
+   ```
 
 ### 14. `git submodule`
 

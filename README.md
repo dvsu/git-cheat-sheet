@@ -18,6 +18,7 @@ The most common Git commands
 12. `git branch`
 13. `git checkout`
 14. `git submodule`
+15. `git rm`
 
 ### 1. `git config`
 
@@ -363,12 +364,12 @@ The most common Git commands
    git push <ALIAS></ALIAS> --delete <REMOTE_BRANCH>
    ```
 
-   ***Example***
+   **_Example_**
 
    Delete remote branch `feature1` from remote repository with alias `origin`.
 
    ```none
-   git push origin --delete feature1 
+   git push origin --delete feature1
    ```
 
 ### 9. `git pull`
@@ -555,3 +556,25 @@ git submodule add --force git@github.com:<myaccount>/<myrepo>.git <path_name>
 ```none
 git submodule add --force git@github.com:mysuperaccount/dashboard.git dashboard
 ```
+
+### 15. `git rm`
+
+---
+
+Stop Git from tracking file/ folder.
+
+**_Command_**
+
+```none
+git rm --cached <file_name>
+```
+
+`-r` flag is required to stop tracking a folder because the `rm` has to be applied to all files inside the folder recursively.
+
+```none
+git rm -r --cached <folder_name>
+```
+
+**_Note_**
+
+The change will become effective on the next commit.

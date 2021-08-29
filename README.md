@@ -444,6 +444,26 @@ local repo                    \
                          merge e5f6f8c a1b2c3d
 ```
 
+### 11. `git clone`
+
+---
+
+1. Clone remote repo
+
+   **_Command_**
+
+   ```none
+   git clone <REMOTE_REPO_URL>
+   ```
+
+2. Clone remote repo which contains submodule
+
+   **_Command_**
+
+   ```none
+   git clone <REMOTE_REPO_URL> --recurse-submodules
+   ```
+
 ### 12. `git branch`
 
 ---

@@ -19,6 +19,7 @@ The most common Git commands
 13. `git checkout`
 14. `git submodule`
 15. `git rm`
+16. `git reset`
 
 ### 1. `git config`
 
@@ -598,3 +599,36 @@ git rm -r --cached <folder_name>
 **_Note_**
 
 The change will become effective on the next commit.
+
+### 16. `git reset`
+
+---
+
+Move the tip of current branch (`HEAD`) back to previous commit, i.e. reset latest commit.
+
+**_Command_**
+
+```none
+git reset --hard HEAD^
+```
+
+**_Note_**
+
+It will also remove the latest commit from history as if it does not exist.
+
+**_Example_**
+
+Before
+
+```none
+fc01324 (HEAD -> main) Remove UI component of feature B
+110fa48 Add feature B
+bec5e72 Feature A: bugfix
+```
+
+After
+
+```none
+110fa48 (HEAD -> main) Add feature B
+bec5e72 Feature A: bugfix
+```

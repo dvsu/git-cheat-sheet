@@ -374,6 +374,22 @@ The most common Git commands
    git push origin --delete feature1
    ```
 
+5. Upload/ push all local tags to remote repository
+
+   **_Command_**
+
+   ```none
+   git push --tags <ALIAS>
+   ```
+
+   **_Example_**
+
+   Upload/ push all local tags to a remote repository with alias `origin`
+
+   ```none
+   git push --tags origin
+   ```
+
 ### 9. `git pull`
 
 ---

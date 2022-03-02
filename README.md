@@ -91,6 +91,34 @@ The most common Git commands
    git config --global user.email "adam.smith@example.com"
    ```
 
+4. Detect capitalization change
+
+   **_Command_**
+
+   ```none
+   git config core.ignorecase false
+   ```
+
+   **_Example_**
+
+   If `ignorecase` is `true` (default value), when you change directory name from
+
+   ```none
+   Product/readme.md
+   ```
+
+   to
+
+   ```none
+   product/readme.md --> (no change)
+   ```
+
+   Git will ignore the change because `Product` and `product` are essentially the same, i.e. `product` (ignorecase) is equal to `product`. However, if `ignorecase` is `false`, `Product` is not equal to `product`. Therefore, it will be detected as a change.
+
+   ```none
+   product/readme.md --> (a change)
+   ```
+
 ### 2. `git init`
 
 ---

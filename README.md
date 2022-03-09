@@ -392,7 +392,7 @@ The most common Git commands
    **_Command_**
 
    ```none
-   git push <ALIAS></ALIAS> --delete <REMOTE_BRANCH>
+   git push <ALIAS> --delete <REMOTE_BRANCH>
    ```
 
    **_Example_**
@@ -417,6 +417,22 @@ The most common Git commands
 
    ```none
    git push --tags origin
+   ```
+
+6. Delete remote tag
+
+   **_Command_**
+
+   ```none
+   git push <ALIAS> :refs/tags/<REMOTE_TAG_NAME>
+   ```
+
+   **_Example_**
+
+   Delete remote tag `1.2.3` from remote repository with alias `origin`.
+
+   ```none
+   git push origin :refs/tags/1.2.3
    ```
 
 ### 9. `git pull`

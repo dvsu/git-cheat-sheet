@@ -1184,3 +1184,9 @@ dddddd revised
    ```none
    git diff
    ```
+
+2. Check the difference/ change added to the staging area
+
+   ```none
+   git diff --cached
+   ```

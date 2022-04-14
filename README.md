@@ -581,6 +581,61 @@ local repo                    \
    git branch -d branch1
    ```
 
+### 13. `git checkout`
+
+---
+
+1. Restore staged or unstaged changes to latest commit (undo changes)
+
+   **_Command_**
+
+   ```none
+   git checkout HEAD <FILE_NAME>
+   ```
+
+   **_Example_**
+
+   `app.js` content of latest commit
+
+   ```javascript
+   const express = require("express");
+   const app = express();
+
+   app.get("/", (req, res, next) => {
+     return res.send("<h1>Hi there!</h1>");
+   });
+
+   app.listen(3000);
+   ```
+
+   Then you made a change
+
+   ```javascript
+   const express = require("express");
+   const app = express();
+
+   app.get("/", (req, res, next) => {
+     return res.send("<h1>Rise and shine!</h1>");
+   });
+
+   // port 3000 in use by React app. Change to 5000
+   app.listen(5000);
+   ```
+
+   and stage it.
+
+   ```none
+   git add app.js
+   ```
+
+   Soon you realize the change is not necessary and plan to restore the `app.js` to its original state (latest commit).
+
+   ```none
+   git checkout HEAD app.js
+   ```
+
+   At this point, the file content will be back to its original state
+
 ### 14. `git submodule`
 
 ---

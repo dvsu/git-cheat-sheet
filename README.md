@@ -675,6 +675,12 @@ local repo                    \
    git checkout HEAD <FILE_NAME>
    ```
 
+   Alternative
+
+   ```none
+   git checkout -- <FILE_NAME>
+   ```
+
    **_Example_**
 
    `app.js` content of latest commit

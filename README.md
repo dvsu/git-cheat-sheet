@@ -698,6 +698,56 @@ local repo                    \
 
    At this point, the file content will be back to its original state
 
+2. Rewind to specific commit and detach from branches
+
+   **_Command_**
+
+   ```none
+   git checkout <COMMIT_HASH>
+   ```
+
+   **_Example_**
+
+   Assume you made 3 commits
+
+   ```none
+   fc01324 (HEAD -> main) Remove UI component of feature B
+   110fa48 Add feature B
+   bec5e72 Feature A: bugfix
+   ```
+
+   You want to rewind to commit `bec5e72`
+
+   ```none
+   git checkout bec5e72
+   ```
+
+   After executing the command, you will be detached from `main` branch.
+
+   ```none
+   bec5e72 (HEAD) Feature A: bugfix
+   ```
+
+   Any changes made from this commit afterwards will not affect the original branch (`main`)
+
+3. Create and switch to new branch
+
+   **_Command_**
+
+   ```none
+   git checkout -b <NEW_BRANCH_NAME>
+   ```
+
+   **_Example_**
+
+   Creating new branch after rewinding to old commit (as of example in point 2)
+
+   ```none
+   git checkout -b security-fix
+   ```
+
+   It will create and switch to a new branch named `security-fix`. This branch will also be connected back to _trunk_ (previously detached)
+
 ### 14. `git submodule`
 
 ---

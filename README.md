@@ -260,7 +260,27 @@ The most common Git commands
    1 file changed, 50 insertions(+), 18 deletions(-)
    ```
 
-2. Revise commit message of latest commit
+2. Stage and commit changes to local repository
+
+   **_Command_**
+
+   ```none
+   git commit -a -m <COMMIT_MESSAGE>
+   ```
+
+   The `git commit -a -m` command is a shortcut for
+
+   ```none
+   git add <FILE_NAME>
+   ```
+
+   and
+
+   ```none
+   git commit -m <COMMIT_MESSAGE>
+   ```
+
+3. Revise commit message of latest commit
 
    **_Command_**
 

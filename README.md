@@ -541,7 +541,7 @@ remote repo
      x-----------------------
 
 local repo
-   commit (e5f6g8h)
+   commit (e5f6a1b)
      x-----------------------
 ```
 
@@ -785,34 +785,76 @@ The change will become effective on the next commit.
 
 ---
 
-Move the tip of current branch (`HEAD`) back to previous commit, i.e. reset latest commit.
+1. Move the tip of current branch (`HEAD`) back to previous commit, i.e. reset latest commit.
 
-**_Command_**
+   **_Command_**
 
-```none
-git reset --hard HEAD^
-```
+   ```none
+   git reset --hard HEAD^
+   ```
 
-**_Note_**
+   **_Note_**
 
-It will also remove the latest commit from history as if it does not exist.
+   It will also virtually remove/ detach the latest commit from history as if it does not exist from `HEAD` point of view. In fact, commit `fc01234` still exists if we manually `checkout` to it.
 
-**_Example_**
+   **_Example_**
 
-Before
+   Before
 
-```none
-fc01324 (HEAD -> main) Remove UI component of feature B
-110fa48 Add feature B
-bec5e72 Feature A: bugfix
-```
+   ```none
+   fc01324 (HEAD -> main) Remove UI component of feature B
+   110fa48 Add feature B
+   bec5e72 Feature A: bugfix
+   ```
 
-After
+   After
 
-```none
-110fa48 (HEAD -> main) Add feature B
-bec5e72 Feature A: bugfix
-```
+   ```none
+   110fa48 (HEAD -> main) Add feature B
+   bec5e72 Feature A: bugfix
+   ```
+
+2. Rewind/ back to specific commit
+
+   **_Command_**
+
+   ```none
+   git reset <COMMIT_HASH>
+   ```
+
+   **_Example_**
+
+   Rewind to commit `bec5e72`
+
+   ```none
+   git reset bec5e72
+   ```
+
+   Before
+
+   ```none
+   fc01324 (HEAD -> main) Remove UI component of feature B
+   110fa48 Add feature B
+   bec5e72 Feature A: bugfix
+   ```
+
+   After
+
+   ```none
+   bec5e72 (HEAD -> main) Feature A: bugfix
+   ```
+
+   Commit `fc01324` and `110fa48` are _detached_ and are not part of the `main` branch anymore. The commits still exist if you `checkout` to the commit manually.
+
+3. Remove a specific file or directory from staging area
+
+   **_Command_**
+
+   ```none
+   git reset <FILE_NAME>
+   ```
+
+   It removes the file/ directory from staging area while preserving the latest change you made.
 
 ### 17. `git rebase`
 

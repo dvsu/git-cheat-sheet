@@ -308,7 +308,7 @@ The most common Git commands
    git commit -m <COMMIT_MESSAGE>
    ```
 
-3. Revise commit message of latest commit
+3. Revise latest commit
 
    **_Command_**
 
@@ -328,8 +328,22 @@ The most common Git commands
 
    **_Example_**
 
+   Assume you spot a typo in `readme.md` of the latest commit. You fix the typo and stage the change.
+
+   ```none
+   git add readme.md
+   ```
+
+   To include the fix and amend it to the latest commit with new commit message
+
    ```none
    git commit --amend -m "Fix UI bug found on feature 2T"
+   ```
+
+   To keep the same commit message
+
+   ```none
+   git commit --amend --no-edit
    ```
 
 ### 7. `git remote`

@@ -864,7 +864,7 @@ The change will become effective on the next commit.
    bec5e72 Feature A: bugfix
    ```
 
-2. Rewind/ back to specific commit, preserve the differences and mark them as `modified`
+2. Rewind/ back to specific commit, preserve the differences and mark them as `modified` and `unstaged`
 
    **_Command_**
 
@@ -927,7 +927,31 @@ The change will become effective on the next commit.
 
    Commit `fc01324` and `110fa48` are _detached_ and are not part of the `main` branch anymore. The commits still exist if you `checkout` to the commit manually.
 
-3. (similar to point 2) Rewind/ back to specific commit and discard any differences made after this commit
+3. (similar to point 2) Rewind/ back to specific commit, preserve the differences and mark them as `modified` and `staged`
+
+   **_Command_**
+
+   ```none
+   git reset --soft <COMMIT_HASH>
+   ```
+
+   **_Example_**
+
+   Same example as point 2, but the difference after executing the `git reset --soft` command
+
+   ```none
+   git reset --soft bec5e72
+   ```
+
+   Content of `doc.txt` after reset
+
+   ```none
+   This is first commit
+   This is second commit  <-- this is the preserved change made after commit bec5e72
+   This is third commit  <-- this is also the preserved change. Both are modified and staged
+   ```
+
+4. (similar to point 2) Rewind/ back to specific commit and discard any differences made after this commit
 
    **_Command_**
 
@@ -951,7 +975,7 @@ The change will become effective on the next commit.
 
    Notice the `This is second commit` and `This is third commit` are not preserved.
 
-4. Remove a specific file or directory from staging area
+5. Remove a specific file or directory from staging area
 
    **_Command_**
 

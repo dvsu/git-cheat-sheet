@@ -121,6 +121,34 @@ The most common Git commands
    product/readme.md --> (a change)
    ```
 
+5. Create an alias for a lengthy command
+
+   **_Command_**
+
+   ```none
+   git config --global alias.<ALIAS_NAME> "<COMMAND_NAME>"
+   ```
+
+   **_Example_**
+
+   Assume you use customized `git log` command to print beautiful log to terminal.
+
+   ```none
+   git log --pretty=format:'%h %aD %d %f' --graph
+   ```
+
+   It is really cumbersome to remember and type a very long command for generating the customized log. The command can be assigned to an alias and applied globally with `--global` option, so the _shortcut_ command exists in the whole system.
+
+   ```none
+   git config --global alias.logoneliner "log --pretty=format:'%h %aD %d %f' --graph"
+   ```
+
+   To test the new shortcut
+
+   ```none
+   git logoneliner
+   ```
+
 ### 2. `git init`
 
 ---

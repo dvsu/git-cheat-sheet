@@ -857,3 +857,11 @@ dddddd revised
    ```none
    git show a1b2c3d4e:src/routes/product.js > src/routes/product.js
    ```
+
+2. Show details of the most recent commit (`HEAD`)
+
+   **_Command_**
+
+   ```none
+   git show HEAD
+   ```

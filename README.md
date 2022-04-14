@@ -814,7 +814,7 @@ The change will become effective on the next commit.
    bec5e72 Feature A: bugfix
    ```
 
-2. Rewind/ back to specific commit
+2. Rewind/ back to specific commit, preserve the differences and mark them as `modified`
 
    **_Command_**
 
@@ -824,7 +824,30 @@ The change will become effective on the next commit.
 
    **_Example_**
 
-   Rewind to commit `bec5e72`
+   Assume you made 3 commits to track changes of `doc.txt`.
+
+   Content of `doc.txt`, first commit (`bec5e72`)
+
+   ```none
+   This is first commit
+   ```
+
+   Content of `doc.txt`, second commit (`110fa48`)
+
+   ```none
+   This is first commit
+   This is second commit
+   ```
+
+   Content of `doc.txt`, third commit (`fc01324`)
+
+   ```none
+   This is first commit
+   This is second commit
+   This is third commit
+   ```
+
+   Rewind to commit `bec5e72` (first commit)
 
    ```none
    git reset bec5e72
@@ -844,9 +867,41 @@ The change will become effective on the next commit.
    bec5e72 (HEAD -> main) Feature A: bugfix
    ```
 
+   Content of `doc.txt` after reset
+
+   ```none
+   This is first commit
+   This is second commit  <-- this is the preserved change made after commit bec5e72
+   This is third commit  <-- this is also the preserved change. Both are modified and unstaged
+   ```
+
    Commit `fc01324` and `110fa48` are _detached_ and are not part of the `main` branch anymore. The commits still exist if you `checkout` to the commit manually.
 
-3. Remove a specific file or directory from staging area
+3. (similar to point 2) Rewind/ back to specific commit and discard any differences made after this commit
+
+   **_Command_**
+
+   ```none
+   git reset --hard <COMMIT_HASH>
+   ```
+
+   **_Example_**
+
+   Same example as point 2, but the difference after executing the `git reset --hard` command
+
+   ```none
+   git reset --hard bec5e72
+   ```
+
+   Content of `doc.txt` after reset
+
+   ```none
+   This is first commit
+   ```
+
+   Notice the `This is second commit` and `This is third commit` are not preserved.
+
+4. Remove a specific file or directory from staging area
 
    **_Command_**
 

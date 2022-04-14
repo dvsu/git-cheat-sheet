@@ -23,6 +23,7 @@ The most common Git commands
 17. `git rebase`
 18. `git tag`
 19. `git show`
+20. `git diff`
 
 ### 1. `git config`
 
@@ -864,4 +865,14 @@ dddddd revised
 
    ```none
    git show HEAD
+   ```
+
+### 20. `git diff`
+
+---
+
+1. Check the difference between working directory and last commit
+
+   ```none
+   git diff
    ```
